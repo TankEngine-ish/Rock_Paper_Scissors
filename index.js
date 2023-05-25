@@ -48,14 +48,29 @@ function getPlayerChoice (){
     }
 }
 
-
-
 function game () {
+    let scorePlayer = 0;
+    let scoreComputer = 0;
     for (let i = 0; i<5; i++) {
         const playerSelection = getPlayerChoice ();
         const computerSelection = getComputerChoice();
         console.log (playRound (playerSelection, computerSelection));
+
+        if (checkWinner(playerSelection, computerSelection) == "Player"){
+            scorePlayer++
+        }else if (checkWinner(playerSelection, computerSelection) == "Computer"){
+            scoreComputer++;
+        
+        }
     }
+        console.log ("Game Over");
+        if (scorePlayer > scoreComputer){
+            console.log ("Player is the winner!");
+        }else if(scorePlayer<scoreComputer){
+            console.log ("Computer is the winner!");
+        }else{
+            console.log ("It's a Tie!");
+        }
 }
 
 game ()
