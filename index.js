@@ -1,11 +1,26 @@
 const options = ["rock", "paper", "scissors"];
 
-function getComputerChoice () {
+function getComputerChoice () { // input from computer //
     const choice = options [Math.floor(Math.random () * options.length )];
-    return choice
+    return choice;
     
 }
 
+// function getPlayerChoice (){ // this is input from player //
+    // let validatedInput = false;
+    // while (validatedInput ==false){
+        // const choice = prompt ("Rock Paper Scissors!").toLowerCase();
+        // if(choice == null){
+        //     continue;
+        // }  so this whole thing was actually just to have the prompt not go away... I don't need it.
+//         const choiceInLower = choice.toLowerCase ();
+//         if (options.includes(choiceInLower)){
+//             // validatedInput = true;
+//             return choiceInLower;
+
+//         }
+    // }
+// // 
 
 function checkWinner (playerSelection, computerSelection){
     if (playerSelection == computerSelection){
@@ -32,27 +47,11 @@ function playRound (playerSelection, computerSelection)  {
     }
 }
 
-function getPlayerChoice (){
-    let validatedInput = false;
-    while (validatedInput ==false){
-        const choice = prompt ("Rock Paper Scissors");
-        if(choice == null){
-            continue;
-        }
-        const choiceInLower = choice.toLowerCase ();
-        if (options.includes(choiceInLower)){
-            validatedInput = true;
-            return choiceInLower;
-
-        }
-    }
-}
-
 function game () {
     let scorePlayer = 0;
     let scoreComputer = 0;
     for (let i = 0; i<5; i++) {
-        const playerSelection = getPlayerChoice ();
+        const playerSelection = prompt ("Rock Paper Scissors!").toLowerCase();
         const computerSelection = getComputerChoice();
         console.log (playRound (playerSelection, computerSelection));
 
@@ -69,7 +68,7 @@ function game () {
         }else if(scorePlayer<scoreComputer){
             console.log ("Computer is the winner!");
         }else{
-            console.log ("It's a Tie!");
+            console.log ("It's a total Tie!");
         }
 }
 
