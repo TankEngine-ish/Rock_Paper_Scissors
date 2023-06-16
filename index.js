@@ -6,22 +6,6 @@ function getComputerChoice () { // input from computer //
     
 }
 
-// function getPlayerChoice (){ // this is input from player //
-    // let validatedInput = false;
-    // while (validatedInput ==false){
-        // const choice = prompt ("Rock Paper Scissors!").toLowerCase();
-        // if(choice == null){
-        //     continue;
-        // }  so this whole thing was actually just to have the prompt not go away... I don't need it.
-//         const choiceInLower = choice.toLowerCase ();
-//         if (options.includes(choiceInLower)){
-//             // validatedInput = true;
-//             return choiceInLower;
-
-//         }
-    // }
-// // 
-
 function checkWinner (playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         return "Tie";
@@ -73,11 +57,3 @@ function game () {
 }
 
 game ()
-
-
-
-
-
-
-
-  
