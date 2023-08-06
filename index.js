@@ -6,6 +6,7 @@ function getComputerChoice () { // input from computer //
     
 }
 
+const charButtons = document.querySelectorAll(".btn")
 
 
 
