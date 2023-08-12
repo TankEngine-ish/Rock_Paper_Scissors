@@ -1,6 +1,6 @@
 const options = ["magnus", "alphazero", "coffee"];
 
-function getComputerChoice () { // input from computer //
+function getComputerChoice () { 
     const choice = options [Math.floor(Math.random () * options.length )];
     return choice;
     
