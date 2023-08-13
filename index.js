@@ -1,3 +1,26 @@
+const playerLabel = document.querySelector("#playerLabel");
+const compLabel = document.querySelector("#compLabel");
+const resultsLabel = document.querySelector("#resultsLabel");
+const choiceBtn = document.querySelectorAll(".choiceBtn");
+
+
+let player
+let computer
+let result
+
+choiceBtn.forEach(button => button.addEventListener("click", () => {
+    player = button.textContent;
+    computerTurn();
+    playerLabel.textContent = `Player: ${player}`;
+    compLabel.textContent = `Computer: ${computer}`;
+    resultsLabel.textContent = checkWinner;
+
+}))
+
+
+
+
+
 const options = ["magnus", "alphazero", "coffee"];
 
 function getComputerChoice () { 
@@ -6,13 +29,17 @@ function getComputerChoice () {
     
 }
 
-const charButtons = document.querySelectorAll(".btn")
 
+
+
+
+const charButtons = document.querySelectorAll(".btn")
+resetBtn.addEventListener('click',() => location.reload());
 
 
 function checkWinner (playerSelection, computerSelection){
     if (playerSelection == computerSelection){
-        return "Tie";
+        return "It's a Draw!";
     }else if (
             (playerSelection == "magnus" && computerSelection == "coffee") || 
             (playerSelection == "coffee" && computerSelection == "alphazero") ||
@@ -27,13 +54,64 @@ function checkWinner (playerSelection, computerSelection){
 function playRound (playerSelection, computerSelection)  {
     const result = checkWinner (playerSelection, computerSelection);
     if (result == "Tie"){
-        return "It's a Tie"
+        return "It's a Tie!"
     }else if (result == "Player"){
         return `You Win! ${playerSelection} beats ${computerSelection}`
     }else{ 
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        return `You lost to your computer! ${computerSelection} beats ${playerSelection}`
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
