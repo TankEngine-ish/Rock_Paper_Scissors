@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@200&display=swap');
 
 
+
+* {
+
+    margin:0;
+    padding:0;
+}
 html {
     background: url(/Images/Chess_Board.jpg);
 }
@@ -30,24 +36,22 @@ h2 {
 h3 {
     display:flex;
     justify-content: center;
-    font-size: 20px;
+    font-size: 31px;
     font-style: bold;
     font-family: 'Edu SA Beginner', cursive;
-    margin-bottom:1px;
     margin-top:10px;
     color:darkred;
     
 }
 
-
-.btn {
+.choiceBtn {
     margin: 50px;
     width: 140px;
     height: 140px;
     border-radius: 50%;
     background-color: aliceblue;
     outline: none;
-    margin-top:15px;
+    margin-top:40px;
 }
 
 .characterButtons {
@@ -64,56 +68,35 @@ img{
     outline: none;
 }
 
-.btn:hover{
+.choiceBtn:hover{
     transform: scale(1.2);
     border-color:red;
+    transition:300ms;
+    cursor:pointer;
 }
 
-.labels {
-    display:flex;
-    justify-content:center;
-    
-}
-
-#playerLabel {
+.scoreLabel{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left:300px;
     font-weight: bold;
-    padding-right: 460px;
-    font-size:40px;
-    font-family: 'Edu SA Beginner', cursive;
+    padding-right: 200px;
+    padding-left: 250px;
+    font-size:30px;
+    font-family: 'Edu SA Beginner', cursive; 
 }
 
-#compLabel{
-    font-weight: bold;
-    padding-right:90px;
-    font-size:40px;
-    font-family: 'Edu SA Beginner', cursive;
-}
 
-/* #resultsLabel {
+.resultsLabel {
     display:flex;
     justify-content:center;
     padding-right:95px;
     font-weight: bold;
-    font-size:50px;
+    font-size:30px;
     margin-top:60px;
     font-family: 'Edu SA Beginner', cursive;
-} */
+}
 
-/* #reset {
-    margin-left:850px;
-    border-radius:60%;
-    color: red;
-    background-color:black;
-    size:40px;
-    width:50px;
-    height:50px;
-    
-    
-} */
-
-
-    
-    /* CSS */
 #reset{
       align-items: center;
       appearance: none;
@@ -143,8 +126,8 @@ img{
       white-space: nowrap;
       will-change: box-shadow,transform;
       font-size: 18px;
-      margin-left:850px;
-      margin-top:110px;
+      margin-left:800px;
+      margin-top:60px;
     }
     
 #reset:focus {
@@ -160,3 +143,26 @@ img{
       box-shadow: #D6D6E7 0 3px 7px inset;
       transform: translateY(2px);
     }
+
+
+
+
+/* .scoreLabels {
+    display:flex;
+    justify-content:center;
+    
+} */
+
+/* #playerLabel {
+    font-weight: bold;
+    padding-right: 410px;
+    font-size:30px;
+    font-family: 'Edu SA Beginner', cursive;
+} */
+/* 
+#compLabel{
+    font-weight: bold;
+    padding-right:90px;
+    font-size:30px;
+    font-family: 'Edu SA Beginner', cursive;
+} */

@@ -1,12 +1,50 @@
+const userScore = 0;
+const compScore = 0;
+const playerScore_span = document.getElementById("userScore");
+const computerScore_span = document.getElementById("computerScore");
+const scoreLabel_div = document.querySelector(".scoreLabel");
+const resultsLabel_div = document.querySelector(".resultsLabel");
+const magnus_button = document.getElementById("Magnus");
+const alphazero_button = document.getElementById("Alphazero");
+const coffee_button = document.getElementById("Coffee");
+
+// This is caching the DOM (storing these variables for future use).
+
+magnus_button.addEventListener('click', function(){
+    game("Magnus");
+})
+
+alphazero_button .addEventListener('click', function(){
+    game("Alphazero");
+})
+
+coffee_button .addEventListener('click', function(){
+    game("Coffee");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const playerLabel = document.querySelector("#playerLabel");
 const compLabel = document.querySelector("#compLabel");
-const resultsLabel = document.querySelector("#resultsLabel");
+
 const choiceBtn = document.querySelectorAll(".choiceBtn");
 
 
-let player
-let computer
-let result
+
 
 choiceBtn.forEach(button => button.addEventListener("click", () => {
     player = button.textContent;
