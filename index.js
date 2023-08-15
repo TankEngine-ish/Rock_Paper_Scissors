@@ -1,12 +1,13 @@
-const userScore = 0;
-const compScore = 0;
-const playerScore_span = document.getElementById("userScore");
+let userScore = 0;
+let compScore = 0;
+const playerScore_span = document.getElementById("playerScore");
 const computerScore_span = document.getElementById("computerScore");
 const scoreLabel_div = document.querySelector(".scoreLabel");
-const resultsLabel_div = document.querySelector(".resultsLabel");
+const resultsLabel_p = document.querySelector(".resultsLabel > p");
 const magnus_button = document.getElementById("Magnus");
 const alphazero_button = document.getElementById("Alphazero");
 const coffee_button = document.getElementById("Coffee");
+
 
 // This is caching the DOM (storing these variables for future use).
 
@@ -18,43 +19,53 @@ function getComputerChoice () {
     
 }
 
-function draw () {
-    console.log (draw);
-}
-
-function win(){
-    console.log (win);
-}
-
-function loss(){
-    console.log (win);
+function win(userChoice, computerChoice){
+    userScore++;
+    playerScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = compScore;
+    resultsLabel_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win! :)";
 }
 
 
 
+function draw (userChoice, computerChoice) {
+    
+    playerScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = compScore;
+    resultsLabel_p.innerHTML = userChoice + " equals " + computerChoice + ". Zero points for each. :/";
+    
+}
 
 
 
+function loss(userChoice, computerChoice){
+    compScore++;
+    playerScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = compScore;
+    resultsLabel_p.innerHTML = computerChoice + " beats " + userChoice + ". You Lost! :(";
 
-
-
+}
+   
 
 
 function game (userChoice) {
     const computerChoice = getComputerChoice();
 
-    if (userChoice == computerChoice){
-        draw();
-        
-    }else if (
-            (userChoice == "Magnus" && computerChoice== "Coffee") || 
-            (userChoice == "Coffee" && computerChoice== "Alphazero") ||
-            (userChoice == "Alphazero" && computerChoice == "Magnus")
-    ){
-        win();
-    }else {
-        loss();
-    }
+if  ((userChoice == "Magnus" && computerChoice== "Coffee") || 
+    (userChoice == "Coffee" && computerChoice== "Alphazero") ||
+    (userChoice == "Alphazero" && computerChoice == "Magnus")) {
+    
+    win(userChoice, computerChoice);
+
+}   else if (userChoice == computerChoice)
+
+{
+    draw(userChoice, computerChoice);
+
+} else {
+    loss(userChoice, computerChoice);
+}
+    
     
 }
 
@@ -62,8 +73,11 @@ function game (userChoice) {
 
 
 
-
-
+// const winnerResults ={
+//     computer: ["You Lost the game to a computer!", 'red'],
+//     player: ["You Win the game!!!!", 'green'],
+//     tie: ["The game is a Tie!", 'blue']
+//   }
 
 
 
@@ -100,12 +114,16 @@ main ();
 
 
 
+const reset_button = document.getElementById("reset");
+const refreshPage = () => {
+    location.reload();
+  }
+  
+ reset_button.addEventListener('click', refreshPage)
 
 
 
 
-// const charButtons = document.querySelectorAll(".btn")
-// resetBtn.addEventListener('click',() => location.reload());
 
 
 
@@ -120,77 +138,19 @@ main ();
 
 
 
-function playRound (playerSelection, computerSelection)  {
-    const result = checkWinner (playerSelection, computerSelection);
-    if (result == "Tie"){
-        return "It's a Tie!"
-    }else if (result == "Player"){
-        return `You Win! ${playerSelection} beats ${computerSelection}`
-    }else{ 
-        return `You lost to your computer! ${computerSelection} beats ${playerSelection}`
-    }
-}
 
 
 
 
 
 
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function game () {
+// function rounds () {
 //     let scorePlayer = 0;
 //     let scoreComputer = 0;
 //     for (let i = 0; i<5; i++) {
-//         // const playerSelection = prompt ("Rock Paper Scissors!").toLowerCase();
-//         const computerSelection = getComputerChoice();
-//         console.log (playRound (playerSelection, computerSelection));
+      
 
 //         if (checkWinner(playerSelection, computerSelection) == "Player"){
 //             scorePlayer++
@@ -209,5 +169,5 @@ function playRound (playerSelection, computerSelection)  {
 //         }
 // }
 
-// game ()
+// rounds ();
 
