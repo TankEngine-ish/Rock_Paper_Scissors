@@ -10,6 +10,26 @@ const coffee_button = document.getElementById("Coffee");
 
 // This is caching the DOM (storing these variables for future use).
 
+
+function getComputerChoice () { 
+    const options = ["Magnus", "Alphazero", "Coffee"];
+    const choices = options [Math.floor(Math.random () * 3)];
+    return choices;
+    
+}
+
+
+
+
+
+function game (userChoice) {
+    const computerChoice = getComputerChoice();
+
+}
+
+
+function main (){
+
 magnus_button.addEventListener('click', function(){
     game("Magnus");
 })
@@ -21,58 +41,42 @@ alphazero_button .addEventListener('click', function(){
 coffee_button .addEventListener('click', function(){
     game("Coffee");
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const playerLabel = document.querySelector("#playerLabel");
-const compLabel = document.querySelector("#compLabel");
-
-const choiceBtn = document.querySelectorAll(".choiceBtn");
-
-
-
-
-choiceBtn.forEach(button => button.addEventListener("click", () => {
-    player = button.textContent;
-    computerTurn();
-    playerLabel.textContent = `Player: ${player}`;
-    compLabel.textContent = `Computer: ${computer}`;
-    resultsLabel.textContent = checkWinner;
-
-}))
-
-
-
-
-
-const options = ["magnus", "alphazero", "coffee"];
-
-function getComputerChoice () { 
-    const choice = options [Math.floor(Math.random () * options.length )];
-    return choice;
-    
 }
 
+main ();
 
 
 
 
-const charButtons = document.querySelectorAll(".btn")
-resetBtn.addEventListener('click',() => location.reload());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const charButtons = document.querySelectorAll(".btn")
+// resetBtn.addEventListener('click',() => location.reload());
 
 
 function checkWinner (playerSelection, computerSelection){
