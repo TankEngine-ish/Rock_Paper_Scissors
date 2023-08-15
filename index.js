@@ -18,6 +18,24 @@ function getComputerChoice () {
     
 }
 
+function draw () {
+    console.log (draw);
+}
+
+function win(){
+    console.log (win);
+}
+
+function loss(){
+    console.log (win);
+}
+
+
+
+
+
+
+
 
 
 
@@ -25,7 +43,31 @@ function getComputerChoice () {
 function game (userChoice) {
     const computerChoice = getComputerChoice();
 
+    if (userChoice == computerChoice){
+        draw();
+        
+    }else if (
+            (userChoice == "Magnus" && computerChoice== "Coffee") || 
+            (userChoice == "Coffee" && computerChoice== "Alphazero") ||
+            (userChoice == "Alphazero" && computerChoice == "Magnus")
+    ){
+        win();
+    }else {
+        loss();
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 function main (){
@@ -62,36 +104,21 @@ main ();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const charButtons = document.querySelectorAll(".btn")
 // resetBtn.addEventListener('click',() => location.reload());
 
 
-function checkWinner (playerSelection, computerSelection){
-    if (playerSelection == computerSelection){
-        return "It's a Draw!";
-    }else if (
-            (playerSelection == "magnus" && computerSelection == "coffee") || 
-            (playerSelection == "coffee" && computerSelection == "alphazero") ||
-            (playerSelection == "alphazero" && computerSelection == "magnus")
-    ){
-        return "Player";
-    }else {
-        return "Computer";
-    }
-} 
+
+
+
+
+
+
+
+
+
+
+
 
 function playRound (playerSelection, computerSelection)  {
     const result = checkWinner (playerSelection, computerSelection);
