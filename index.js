@@ -15,8 +15,7 @@ const coffee_button = document.getElementById("Coffee");
 function getComputerChoice () { 
     const options = ["Magnus", "Alphazero", "Coffee"];
     const choices = options [Math.floor(Math.random () * 3)];
-    return choices;
-    
+    return choices; 
 }
 
 function win(userChoice, computerChoice){
@@ -26,17 +25,12 @@ function win(userChoice, computerChoice){
     resultsLabel_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win! :)";
 }
 
-
-
 function draw (userChoice, computerChoice) {
-    
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
     resultsLabel_p.innerHTML = userChoice + " equals " + computerChoice + ". Zero points for each. :/";
     
 }
-
-
 
 function loss(userChoice, computerChoice){
     compScore++;
@@ -45,10 +39,27 @@ function loss(userChoice, computerChoice){
     resultsLabel_p.innerHTML = computerChoice + " beats " + userChoice + ". You Lost! :(";
 
 }
-   
+ 
+
+function game (){
+    if (userScore === 5){
+        resultsLabel_p.innerHTML = "You won five rounds! Victory is yours!"
+        document.getElementById ("Magnus").disabled = true;
+        document.getElementById ("Alphazero").disabled = true;
+        document.getElementById ("Coffee").disabled = true;
+    }else if (compScore === 5) {
+        resultsLabel_p.innerHTML = "You lost to the computer! Restart to try again!"
+        document.getElementById ("Magnus").disabled = true;
+        document.getElementById ("Alphazero").disabled = true;
+        document.getElementById ("Coffee").disabled = true;
+    }
+// these two selectors disable the buttons once we have a winner
+ }
+ game (); 
+ 
 
 
-function game (userChoice) {
+function playRound (userChoice) {
     const computerChoice = getComputerChoice();
 
 if  ((userChoice == "Magnus" && computerChoice== "Coffee") || 
@@ -65,13 +76,105 @@ if  ((userChoice == "Magnus" && computerChoice== "Coffee") ||
 } else {
     loss(userChoice, computerChoice);
 }
-    
-    
+game();  
 }
 
 
+function main (){
+
+magnus_button.addEventListener('click', function(){
+    playRound("Magnus");
+})
+
+alphazero_button .addEventListener('click', function(){
+    playRound("Alphazero");
+})
+
+coffee_button .addEventListener('click', function(){
+    playRound("Coffee");
+})
+
+}
+
+main ();
 
 
+const reset_button = document.getElementById("reset");
+const refreshPage = () => {
+    location.reload();
+  }
+  
+ reset_button.addEventListener('click', refreshPage)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  OLD JS BELOW--
+ 
+
+// function rounds () {
+//     for (let i = 0; i<5; i++) {
+//     }
+//         if (userScore > compScore){
+        
+
+//         }else if(userScore < compScore){
+//         return resultsLabel_p.innerHTML = "You lost!"
+// }
+// }
+
+// rounds ();
+
+
+   // if (checkWinner(playerSelection, computerSelection) == "Player"){
+        //     scorePlayer++
+        // }else if (checkWinner(playerSelection, computerSelection) == "Computer"){
+        //     scoreComputer++;
+        
+        // }
 
 // const winnerResults ={
 //     computer: ["You Lost the game to a computer!", 'red'],
@@ -83,91 +186,4 @@ if  ((userChoice == "Magnus" && computerChoice== "Coffee") ||
 
 
 
-
-function main (){
-
-magnus_button.addEventListener('click', function(){
-    game("Magnus");
-})
-
-alphazero_button .addEventListener('click', function(){
-    game("Alphazero");
-})
-
-coffee_button .addEventListener('click', function(){
-    game("Coffee");
-})
-}
-
-main ();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const reset_button = document.getElementById("reset");
-const refreshPage = () => {
-    location.reload();
-  }
-  
- reset_button.addEventListener('click', refreshPage)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-// function rounds () {
-//     let scorePlayer = 0;
-//     let scoreComputer = 0;
-//     for (let i = 0; i<5; i++) {
-      
-
-//         if (checkWinner(playerSelection, computerSelection) == "Player"){
-//             scorePlayer++
-//         }else if (checkWinner(playerSelection, computerSelection) == "Computer"){
-//             scoreComputer++;
-        
-//         }
-//     }
-//         console.log ("Game Over");
-//         if (scorePlayer > scoreComputer){
-//             console.log ("Player is the winner!");
-//         }else if(scorePlayer<scoreComputer){
-//             console.log ("Computer is the winner!");
-//         }else{
-//             console.log ("It's a total Tie!");
-//         }
-// }
-
-// rounds ();
 
