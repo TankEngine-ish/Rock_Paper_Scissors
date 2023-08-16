@@ -8,6 +8,8 @@
 }
 html {
     background: url(./Images/Chess_Board.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
 }
 
 
