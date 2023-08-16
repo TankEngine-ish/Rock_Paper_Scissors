@@ -28,8 +28,7 @@ function win(userChoice, computerChoice){
 function draw (userChoice, computerChoice) {
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
-    resultsLabel_p.innerHTML = userChoice + " equals " + computerChoice + ". Zero points for each. :/";
-    
+    resultsLabel_p.innerHTML = userChoice + " equals " + computerChoice + ". Zero points for each. :/";  
 }
 
 function loss(userChoice, computerChoice){
@@ -37,11 +36,10 @@ function loss(userChoice, computerChoice){
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
     resultsLabel_p.innerHTML = computerChoice + " beats " + userChoice + ". You Lost! :(";
-
 }
  
 
-function game (){
+function game () {
     if (userScore === 5){
         resultsLabel_p.innerHTML = "You won five rounds! Victory is yours!"
         document.getElementById ("Magnus").disabled = true;
@@ -53,11 +51,10 @@ function game (){
         document.getElementById ("Alphazero").disabled = true;
         document.getElementById ("Coffee").disabled = true;
     }
-// these two selectors disable the buttons once we have a winner
+// these selectors disable the buttons once we have a winner
  }
  game (); 
  
-
 
 function playRound (userChoice) {
     const computerChoice = getComputerChoice();
@@ -68,14 +65,15 @@ if  ((userChoice == "Magnus" && computerChoice== "Coffee") ||
     
     win(userChoice, computerChoice);
 
-}   else if (userChoice == computerChoice)
+}else if (userChoice == computerChoice)
 
 {
     draw(userChoice, computerChoice);
 
-} else {
+}else{
     loss(userChoice, computerChoice);
 }
+
 game();  
 }
 
@@ -93,7 +91,6 @@ alphazero_button .addEventListener('click', function(){
 coffee_button .addEventListener('click', function(){
     playRound("Coffee");
 })
-
 }
 
 main ();
@@ -102,9 +99,9 @@ main ();
 const reset_button = document.getElementById("reset");
 const refreshPage = () => {
     location.reload();
-  }
+}
   
- reset_button.addEventListener('click', refreshPage)
+reset_button.addEventListener('click', refreshPage)
  
 
 
