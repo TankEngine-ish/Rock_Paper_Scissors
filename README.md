@@ -17,6 +17,7 @@ when I worked on another branch, but after I merged it with main they all fell i
 
 
 Live preview:
-
+https://tankengine-ish.github.io/Rock_Paper_Scissors/
 
 Screengrab:
+![Screengrab](https://github.com/TankEngine-ish/Rock_Paper_Scissors/blob/main/Images/Screengrab.png?raw=true)
