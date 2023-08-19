@@ -102,46 +102,6 @@ const refreshPage = () => {
 }
   
 reset_button.addEventListener('click', refreshPage)
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
