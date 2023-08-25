@@ -22,20 +22,20 @@ function win(userChoice, computerChoice){
     userScore++;
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
-    resultsLabel_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win! :)";
+    resultsLabel_p.innerHTML = userChoice + "(You)" + " beats " + computerChoice + "(Computer)" + ". You Win! :)";
 }
 
 function draw (userChoice, computerChoice) {
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
-    resultsLabel_p.innerHTML = userChoice + " equals " + computerChoice + ". Zero points for each. :/";  
+    resultsLabel_p.innerHTML = userChoice + "(You)" + " equals " + computerChoice + "(Computer)" +  ". Zero points for each. :/";  
 }
 
 function loss(userChoice, computerChoice){
     compScore++;
     playerScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = compScore;
-    resultsLabel_p.innerHTML = computerChoice + " beats " + userChoice + ". You Lost! :(";
+    resultsLabel_p.innerHTML = computerChoice + "(Computer)" + " beats " + userChoice + "(You)" + ". You Lost! :(";
 }
  
 

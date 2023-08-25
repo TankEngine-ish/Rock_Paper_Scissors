@@ -28,7 +28,7 @@ h1 {
 h2 {
     display:flex;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-style:italic;
     font-family: 'Edu SA Beginner', cursive;
     line-height: 1.5;
@@ -38,7 +38,7 @@ h2 {
 h3 {
     display:flex;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-style: bold;
     font-family: 'Edu SA Beginner', cursive;
     margin-top:20px;
@@ -50,7 +50,7 @@ h3 {
 .characterButtons {
     display:flex;
     justify-content: center;
-    margin-top:30px;
+    margin-bottom:60px;
 }
 
 
