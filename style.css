@@ -7,6 +7,7 @@
 
     margin:0;
     padding:0;
+    
 }
 
 html {
@@ -50,7 +51,7 @@ h3 {
 .characterButtons {
     display:flex;
     justify-content: center;
-    margin-bottom:60px;
+    margin-bottom:15px;
 }
 
 
@@ -86,12 +87,12 @@ img{
     justify-content:space-around;
     margin-left:300px;
     font-weight: bold;
-    padding: 0 20px;
-    margin-top: 30px;
     margin-right:350px;
     font-size:1.5rem;
     font-family: 'Edu SA Beginner', cursive; 
 }
+
+
 
 
 .resultsLabel {
@@ -140,18 +141,66 @@ img{
     }
     
 #reset:focus {
-      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    }
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
     
 #reset:hover {
-      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-      transform: translateY(-2px);
-    }
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
     
 #reset:active {
-      box-shadow: #D6D6E7 0 3px 7px inset;
-      transform: translateY(2px);
-    }
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+footer {
+    display:flex;
+    justify-content:center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    margin-left:15px;
+    margin-bottom:7px;
+}
+
+footer a {
+    text-decoration: none; /* Remove underline */
+    color: #f30000; /* Change link color */
+    margin-right:10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.7rem;
+}
+
+footer a i {
+    font-size: 39px; /* Change icon size */
+    margin-right:15px;
+}
+
+.fa-github {
+    transition: transform 0.2s ease-in-out;
+}
+     
+     /* Define the bounce effect on hover */
+.fa-github:hover {
+    transform: translateY(-25px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
