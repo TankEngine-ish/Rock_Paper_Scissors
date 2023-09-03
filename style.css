@@ -4,10 +4,8 @@
 
 
 * {
-
     margin:0;
     padding:0;
-    
 }
 
 html {
@@ -94,7 +92,6 @@ img{
 
 
 
-
 .resultsLabel {
     display:flex;
     justify-content:center;
@@ -154,12 +151,10 @@ img{
     transform: translateY(2px);
 }
 
-footer {
-    display:flex;
-    justify-content:center;
-}
 
 footer{
+    display:flex;
+    justify-content:center;
     position: fixed;
     bottom: 0;
     margin-left:15px;
